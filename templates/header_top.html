@@ -1,0 +1,40 @@
+{% load static %}
+ <!-- Header Top Area Start -->
+      <section class="gauto-header-top-area">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="header-top-left">
+                     <p>Need Help?: <i class="fa fa-phone"></i> Call: +321 123 45 978</p>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="header-top-right">
+                   {% if request.user.is_authenticated %}
+
+                    <a href="{% url 'account:logout' %}">
+                     <i class="fa fa-key"></i>
+                     logout
+                     </a>
+
+                   {% else %}
+
+                   <a href="{% url 'account:sign_in' %}">
+                     <i class="fa fa-key"></i>
+                     login
+                     </a>
+                     <a href="{% url 'account:sign_up' %}">
+                     <i class="fa fa-user"></i>
+                     register
+                     </a>
+
+                   {% endif %}
+                     
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Header Top Area End -->
+       

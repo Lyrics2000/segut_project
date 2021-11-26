@@ -1,0 +1,232 @@
+{% load static %}
+<!-- Cart Page Start -->
+      <section class="gauto-cart-page-area section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-8">
+                  <div class="cart-table-left">
+                     <h3>Booking Summary</h3>
+                     <div class="table-responsive">
+                        <table class="table" >
+                          
+                           <tbody>
+                              <tr class="shop-cart-item">
+                                 <td class="gauto-cart-preview">
+                                    <a href="#">
+                                    <img src="{{booking.schedule_id.bus_id.bus_image.url}}" alt="cart-1">
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>{{booking.schedule_id.bus_id.bus_no_plate}}</p>
+                                    </a>
+                                 </td>
+                               
+                               
+                              </tr>
+                              <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Driver</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.schedule_id.bus_id.driver_name}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+                            <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Type</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.schedule_id.bus_id.bus_type}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+                            <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Number of Passangers</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.schedule_id.bus_id.number_of_passangers}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+                                <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>From</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.schedule_id.starting_point}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+                                  <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>To</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.schedule_id.destination}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+
+                              </tr>
+
+                                  <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Departure Date</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.schedule_id.schedule_date}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+                              
+
+                              </tr>
+
+                            <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Expected Arrival Date</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.schedule_id.estimated_arrival_time}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+
+                            <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Bookingid</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.id}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+                               <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Number of seats booked</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.number_of_seats}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+
+                                   <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Seat Number</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>{{booking.seat_ids}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+
+                                    <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Fare Amount</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>Ksh: {{booking.fare_amount}}/Seat</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+                                     <tr class="shop-cart-item">
+                                 
+                                 <td class="gauto-cart-product">
+                                    <a href="#">
+                                       <p>Total Amount</p>
+                                    </a>
+                                 </td>
+                                 <td class="gauto-cart-price">
+                                    <p>Ksh: {{booking.total_amount}}</p>
+                                 </td>
+                            
+                                
+                              </tr>
+
+
+
+
+
+                           
+                           </tbody>
+                        </table>
+                     </div>
+                    
+                  </div>
+               </div>
+               <div class="col-lg-4">
+                <div class="order-summury-box">
+                     <h3>Proceed to Payment</h3>
+                    
+                  </div>
+                 <form method = "POST" action="{% url 'payment:lipa_na_mpesa' %}" >
+                   {% csrf_token %}
+               <input type="text" class="form-control" name="phone"   placeholder="Enter Mpesa Number">
+                  <div class="checkout-action">
+                     <button style="background:red;" type="submit"  class="gauto-btn">Pay</button>
+                  </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Cart Page End -->
+       

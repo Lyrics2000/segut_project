@@ -1,0 +1,49 @@
+{% load static %}
+
+<!-- Car Booking Area Start -->
+      <section class="gauto-car-booking section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="car-booking-image">
+                  {% if travel_filtered %}
+                     <img src="{{travel_filtered.bus_id.bus_image.url}}" alt="car" />
+                  {% endif %}
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="car-booking-right">
+                     <h2 >{{travel_filtered.bus_id.bus_type}},{{travel_filtered.bus_id.bus_no_plate}}</h2>
+                     <h3>{{travel_filtered.bus_id.number_of_passangers}} Seats Open</h3>
+                     <div class="price-rating">
+                        <div class="price-rent">
+                           <h4>Ksh: {{travel_filtered.fare_amount}} <span>/ Seat</span></h4>
+                        </div>
+                        <div class="car-rating">
+                           <ul>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star-half-o"></i></li>
+                           </ul>
+                           <p>(123 rating)</p>
+                        </div>
+                     </div>
+                     <p>{{travel_filtered.remarks}}</p>
+                     <div class="car-features clearfix">
+                        <ul style="width:100%;">
+                           <li><i class="fa fa-car"></i>Departure Date : {{travel_filtered.schedule_date}}</li>
+                           <li><i class="fa fa-cogs"></i>Expected Arrival Time : {{travel_filtered.estimated_arrival_time}}</li>
+            
+                        </ul>
+                      
+                      
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Car Booking Area End -->
+       

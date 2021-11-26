@@ -29,10 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'authentification',
+    'account',
     'djoser',
     "corsheaders",
     'mainapp',
+    'payment'
 
 ]
 
@@ -52,7 +53,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR/'templates'),
+        os.path.join(BASE_DIR/'mainapp/templates'),
+        os.path.join(BASE_DIR/'payment/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -94,7 +97,7 @@ REST_FRAMEWORK = {
 
 }
 
-AUTH_USER_MODEL = 'authentification.User'
+AUTH_USER_MODEL = 'account.User'
 
 
 DJOSER = {
@@ -162,3 +165,8 @@ MEDIA_ROOT = os.path.join('media_cdn')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'thomasambetsa@gmail.com'
+EMAIL_HOST_PASSWORD = 'wojjleviqxakkazs'
+EMAIL_PORT = 587

@@ -1,0 +1,87 @@
+{% load static %}
+  <!-- Find Area Start -->
+      <section class="gauto-find-area">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="find-box">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <div class="find-text">
+                              <h3>Book a Bus</h3>
+                           </div>
+                        </div>
+                        <div class="col-md-8">
+                           <div class="find-form">
+                              <form method = "POST" action="{% url 'mainapp:vehicle_detailed' %}">
+                                 
+                                  {% csrf_token %}
+                                 <div class="row">
+                                    <div class="col-md-4">
+                                       <p>
+                                          <select name="form">
+                                             <option data-display="From"></option>
+                                             {% if travel_schedule %}
+                                             {% for tr in travel_schedule %}
+                                             <option value="{{tr.starting_point}}">{{tr.starting_point}}</option>
+                                             {% endfor %}
+                                             {% endif %}
+                                          </select>
+                                       </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                       <p>
+                                            <select name="to">
+                                             <option data-display="To"></option>
+                                             {% if travel_schedule %}
+                                             {% for to in travel_schedule %}
+                                             <option value="{{to.destination}}">{{to.destination}}</option>
+                                             {% endfor %}
+                                             {% endif %}
+                                          </select>
+                                       </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                       <p>
+                                          <select name="vehicle_type">
+                                          
+                                             <option data-display="Vehicle Type"></option>
+                                             <option value="Inter-County">Inter-County</option>
+                                             <option value="Express">Express</option>
+                                   
+                                          </select>
+                                       </p>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                 <div class="col-md-4">
+                                    <p>
+                                            <select name="departure_date">
+                                             <option data-display="Departure Date"></option>
+                                             {% if travel_schedule %}
+                                             {% for dp in travel_schedule %}
+                                             <option value="{{dp.schedule_date}}">{{dp.schedule_date}}</option>
+                                             {% endfor %}
+                                             {% endif %}
+                                          </select>
+                                       </p>
+                                    </div>
+                                   
+                                    <div class="col-md-4">
+                                       <p>
+                                          <button type="submit" class="gauto-theme-btn">Book</button>
+                                       </p>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Find Area End -->
+       
+       

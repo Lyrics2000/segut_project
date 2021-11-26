@@ -1,0 +1,41 @@
+{% load static %}
+    <!-- Service Area Start -->
+      <section class="gauto-service-area section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="site-heading">
+                     <h4>see our</h4>
+                     <h2>Latest Services</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="service-slider owl-carousel">
+                    {% if our_services %}
+
+                    {% for our in our_services %}
+                    
+                     <div class="single-service">
+                        <span class="service-number">{{our.id}}</span>
+                        
+                        <div class="service-text">
+                           <a href="#">
+                              <h3>{{our.header}}</h3>
+                           </a>
+                           <p>{{our.body}}</p>
+                        </div>
+                     </div>
+
+                     {% endfor %}
+
+                     {% endif %}
+                    
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Service Area End -->
+       

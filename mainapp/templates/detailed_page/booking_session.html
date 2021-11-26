@@ -1,0 +1,176 @@
+{% load static %}
+ <!-- Booking Form Area Start -->
+      <section class="gauto-booking-form section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-8">
+                  <div class="booking-form-left">
+                     <div class="single-booking">
+                        <h3>Seats Available</h3>
+                        <form method = "POST" action = "{% url 'mainapp:boooking' %}">
+                         {% csrf_token %}
+                           <div class="row">
+
+                           <table class="table table-dark">
+            
+                            <tbody>
+                                <tr>
+                        
+                                <td>
+
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="01">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>01</h6>
+                                </label>
+                                </div>
+
+                                </td>
+                                <td>
+
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="02">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>02</h6>
+                                </label>
+                                </div>
+                        
+        
+                                </td>
+                                <td> Driver </td>
+                                </tr>
+                                <tr>
+                               
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="03">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>03</h6>
+                                </label>
+                                </div>
+                                </td>
+                                 <td>
+                                 <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="04">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>04</h6>
+                                </label>
+                                </div>
+                                </td>
+                                 <td>
+                                 <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="05">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>05</h6>
+                                </label>
+                                </div>
+                                </td>
+                                </tr>
+                                <tr>
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="06">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>06</h6>
+                                </label>
+                                </div>
+                                </td>
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="07">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>07</h6>
+                                </label>
+                                </div>
+                                </td>
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="08">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>08</h6>
+                                </label>
+                                </div>
+                                </td>
+                               
+                                </tr>
+
+                                <tr>
+
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="09">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>09</h6>
+                                </label>
+                                </div>
+                                </td>
+
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="10">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>10</h6>
+                                </label>
+                                </div>
+                                </td>
+
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="11">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>11</h6>
+                                </label>
+                                </div>
+                                </td>
+
+                                </tr>
+
+                                <tr>
+
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="12">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>12</h6>
+                                </label>
+                                </div>
+                                </td>
+
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="13">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>13</h6>
+                                </label>
+                                </div>
+                                </td>
+
+                                 <td>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  name="14">
+                                <label style="color:white;" class="form-check-label" for="flexCheckDefault">
+                                    <h6>14</h6>
+                                </label>
+                                </div>
+                                </td>
+
+                                </tr>
+                            </tbody>
+                            </table>
+
+  
+                           <input type="hidden"  name="travel_id" value="{{travel_filtered.id}}">
+                          </div>
+
+                          <button style="background:red;" type="submit"  class="gauto-btn">Book Now!</button>
+                        </form>
+                     </div>
+                     
+                  </div>
+               </div>
+             
+            </div>
+         </div>
+      </section>
+      <!-- Booking Form Area End -->
+       

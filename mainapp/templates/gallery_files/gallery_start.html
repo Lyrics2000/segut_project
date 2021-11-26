@@ -1,0 +1,49 @@
+{% load static %}
+    <!-- Gallery Area Start -->
+      <section class="gauto-gallery-area section_70">
+         <div class="container">
+            <div class="row" id="lightgallery">
+
+            {% if all_bus_stop %}
+            {% for all in all_bus_stop %}
+               <div class="col-lg-4" data-src="{{all.bus_stop_image.url}}">
+                  <div class="single-gallery">
+                     <div class="img-holder">
+                        <img src="{{all.bus_stop_image.url}}" alt="gallery 1" />
+                        <div class="overlay-content">
+                           <div class="inner-content">
+                              <div class="title-box">
+                                 <h3><a href="#">{{all.bus_name}}</a></h3>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="link-zoom-button">
+                           {% comment %} <div class="single-button"> {% endcomment %}
+                              {% comment %} <a href="#"><span class="fa fa-link"></span>Details</a>
+                           </div> {% endcomment %}
+                           {% comment %} <div class="single-button">
+                              <a class="zoom lightbox-image" href="{% static 'assets/img/gallery-1.jpg' %}">
+                              <span class="fa fa-search"></span>Zoom
+                              </a>
+                           </div> {% endcomment %}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            {% endfor %}
+
+            {% endif %}
+              
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="load-more">
+                     <a href="#" class="gauto-btn">More Pictures</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Gallery Area End -->
+       

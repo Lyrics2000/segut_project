@@ -1,0 +1,36 @@
+{% load static %}
+     
+      <!-- About Area Start -->
+      <section class="gauto-about-area section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="about-left">
+                     <h4>about us</h4>
+                     {% if about_us %}
+                     <h2>{{about_us.header}}</h2>
+                     <p>{{about_us.body}}</p>
+                     {% endif %}
+                     <div class="about-list">
+                        <ul>
+                        {% if about_us_values %}
+                        {% for ab in about_us_values %}
+                           <li><i class="fa fa-check"></i>{{ab.values}}</li>
+                         
+                        {% endfor %}
+                        {% endif %}
+                        </ul>
+                     </div>
+                   
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="about-right">
+                     <img src="{% static 'assets/img/ml1.jpg' %}" alt="car" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- About Area End -->
+       

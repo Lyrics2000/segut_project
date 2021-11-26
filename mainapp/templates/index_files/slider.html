@@ -1,0 +1,35 @@
+{% load static %}
+   
+      <!-- Slider Area Start -->
+      <section class="gauto-slider-area fix">
+         <div class="gauto-slide owl-carousel">
+
+         {% if slider %}
+         {% for s in slider %}
+            
+            <div class="gauto-main-slide slide-item-1">
+               <div class="gauto-main-caption">
+                  <div class="gauto-caption-cell">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="slider-text">
+                                 <p>{{s.header}}</p>
+                                 <h2>{{s.header2}}</h2>
+                                 <a href="{% url 'mainapp:car_booking' %}" class="gauto-btn">Reserve Now!</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         {% endfor %}
+
+         {% endif %}
+           
+         </div>
+      </section>
+      <!-- Slider Area End -->
+       
