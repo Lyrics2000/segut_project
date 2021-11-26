@@ -7,7 +7,8 @@ SLiderPanel,
 AboutUs,
 AboutUsValues,
 OurServices,
-BusStop)
+BusStop,
+ContactUs)
 
 # Register your models here.
 admin.site.register(Bus)
@@ -20,4 +21,5 @@ admin.site.register(AboutUs)
 admin.site.register(AboutUsValues)
 admin.site.register(OurServices)
 admin.site.register(BusStop)
+admin.site.register(ContactUs)
 

@@ -4,6 +4,9 @@ from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from account.models import User
 from .models import Booking
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 
 # Create your views here.
 from .models import (
@@ -12,7 +15,8 @@ from .models import (
     AboutUsValues,
     OurServices,
     BusStop,
-    TravelSChedule
+    TravelSChedule,
+    ContactUs
 )
 
 def index(request):
@@ -142,6 +146,40 @@ def mpesa_pay(request):
         'booking' :  booking_obj
     }
     return render(request,'booking_summary.html',context)
+
+
+def about_us(request):
+    latest_abt =  AboutUs.objects.last()
+    context = {
+        'about_us' :  latest_abt
+    }
+    return render(request,'about_us.html',context)
+
+
+def contact_us(request):
+    if request.method == "POST":
+        ContactUs.objects.create(
+            name = request.POST.get("name"),
+            email =  request.POST.get("email"),
+            phone =  request.POST.get("phone"),
+            subject =  request.POST.get("subject"),
+            message =  request.POST.get("message") 
+
+        )
+        # email_subject = 'Contact Us'
+        # user =  request.user
+        # current_site = get_current_site(request)
+        # message = render_to_string('contact_us_booking.html', {
+        # 'user': user,
+        # 'domain': current_site.domain,
+        # })
+        # to_email = user.email
+        # email = EmailMessage(email_subject, message, to=[to_email])
+        # email.send()
+
+        return redirect("/")
+    
+    return render(request,'contact_us.html')
 
 
 

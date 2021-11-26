@@ -10,10 +10,10 @@
                            <li class="active"><a href="/">home</a></li>
                            <li><a href="{% url 'mainapp:car_booking' %}">Book MoloLine</a></li>
                            <li>
-                             <a href="about.html">About Us</a>
+                             <a href="{% url 'mainapp:about_us' %}">About Us</a>
                            </li>
                            <li>
-                              <a href="#">Contact Us</a>
+                              <a href="{% url 'mainapp:contact_us' %}">Contact Us</a>
                              
                            </li>
                           
@@ -22,85 +22,7 @@
                      </nav>
                   </div>
                </div>
-               <div class="col-lg-3 col-sm-12">
-                  <div class="main-search-right">
-                     <!-- Responsive Menu Start -->
-                     <div class="gauto-responsive-menu"></div>
-                     <!-- Responsive Menu Start -->
-                      
-                     <!-- Cart Box Start -->
-                     <div class="header-cart-box">
-                        <div class="login dropdown">
-                           <button class="dropdown-toggle cart-icon" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <span>2</span>
-                           </button>
-                           <div class="dropdown-menu cart-dropdown" aria-labelledby="dropdownMenu1">
-                              <ul class="product_list">
-                                 <li>
-                                    <div class="cart-btn-product">
-                                       <a class="product-remove" href="#">
-                                       <i class="fa fa-times"></i>
-                                       </a>
-                                       <div class="cart-btn-pro-img">
-                                          <a href="#">
-                                          <img src="{% static 'assets/img/cart-1.png' %}" alt="product" />
-                                          </a>
-                                       </div>
-                                       <div class="cart-btn-pro-cont">
-                                          <h4><a href="#">CAR SPOILERS</a></h4>
-                                          <p>Quantity 2</p>
-                                          <span class="price">
-                                          $29.99
-                                          </span>
-                                       </div>
-                                    </div>
-                                 </li>
-                                 <li>
-                                    <div class="cart-btn-product">
-                                       <a class="product-remove" href="#">
-                                       <i class="fa fa-times"></i>
-                                       </a>
-                                       <div class="cart-btn-pro-img">
-                                          <a href="#">
-                                          <img src="{% static 'assets/img/cart-2.jpg' %}" alt="product" />
-                                          </a>
-                                       </div>
-                                       <div class="cart-btn-pro-cont">
-                                          <h4><a href="#">CAR SPOILERS</a></h4>
-                                          <p>Quantity 2</p>
-                                          <span class="price">
-                                          $29.99
-                                          </span>
-                                       </div>
-                                    </div>
-                                 </li>
-                              </ul>
-                              <div class="cart-subtotal">
-                                 <p>
-                                    Subtotal :
-                                    <span class="drop-total">$59.98</span>
-                                 </p>
-                              </div>
-                              <div class="cart-btn">
-                                 <a href="#" class="cart-btn-1">View Cart</a>
-                                 <a href="#" class="cart-btn-2">Checkout</a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <!-- Cart Box End -->
-                      
-                     <!-- Search Box Start -->
-                     <div class="search-box">
-                        <form>
-                           <input type="search" placeholder="Search">
-                           <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                     </div>
-                     <!-- Search Box End -->
-                      
-                  </div>
-               </div>
+             
             </div>
          </div>
       </section>

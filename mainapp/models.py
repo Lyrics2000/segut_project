@@ -99,6 +99,7 @@ class SLiderPanel(BaseModel):
 class AboutUs(BaseModel):
     header =  models.CharField(max_length=255)
     body =  models.TextField()
+    image =  models.ImageField(upload_to =  upload_image_path,blank = True,null =True)
 
     def __str__(self):
         return self.header
@@ -123,6 +124,18 @@ class BusStop(BaseModel):
 
     def __str__(self):
         return self.bus_name
+
+class ContactUs(BaseModel):
+    name =  models.CharField(max_length=255)
+    email = models.EmailField()
+    subject =  models.CharField(max_length=255)
+    phone =  models.CharField(max_length=255)
+    message =  models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
 
 
 

@@ -1,0 +1,31 @@
+{% load static %}
+{% if about_us %}
+ <!-- About Page Area Start -->
+      <section class="about-page-area section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="about-page-left">
+                     <h4>About Us</h4>
+                     <h3>{{about_us.header}}</h3>
+                     <p>{{about_us.body}}</p>
+
+                     <div class="about-page-call">
+                        <div class="page-call-icon">
+                           <i class="fa fa-phone"></i>
+                        </div>
+       
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="about-page-right">
+                     <img src="{{about_us.image.url}}" alt="about page" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- About Page Area End -->
+{% endif %}
+       

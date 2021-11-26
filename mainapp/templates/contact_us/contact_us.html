@@ -1,0 +1,57 @@
+{% load static %}
+  <!-- Contact Area Start -->
+      <section class="gauto-contact-area section_70">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-7">
+                  <div class="contact-left">
+                     <h3>Get in touch</h3>
+                     <form method = "POST" action="{% url 'mainapp:contact_us' %}">
+                     {% csrf_token %}
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="single-contact-field">
+                                 <input name="name" type="text" placeholder="Your Name">
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="single-contact-field">
+                                 <input name="email" type="email" placeholder="Email Address">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="single-contact-field">
+                                 <input name="subject" type="text" placeholder="Subject">
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="single-contact-field">
+                                 <input name="phone" type="tel" placeholder="Phone Number">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="single-contact-field">
+                                 <textarea name="message" placeholder="Write here your message"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="single-contact-field">
+                                 <button type="submit" class="gauto-theme-btn"><i class="fa fa-paper-plane"></i> Send Message</button>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+              
+            </div>
+         </div>
+      </section>
+      <!-- Contact Area End -->
+       

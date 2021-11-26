@@ -135,11 +135,11 @@ def mpesa_queyr(request):
             message = render_to_string('sucess_booking.html', {
             'user': user,
             'domain': current_site.domain,
-         
             })
             to_email = user.email
             email = EmailMessage(email_subject, message, to=[to_email])
             email.send()
+            
             print("3")
          
             return redirect("mpesa:qr_code")
@@ -148,10 +148,15 @@ def mpesa_queyr(request):
     return render(request,'mpesa_erro.html',{})
     
 
+@login_required(login_url="account:sign_in")
 def qr_code(request):
+    user =  request.user
     booking =  request.session.get('booking_id')
     booking_obj =  Booking.objects.get(id = booking)
     bkn = {}
+    bkn['first_name'] =  request.user.first_name
+    bkn['last_name'] =  request.user.last_name
+    bkn['phone'] =  request.user.phone
     bkn['fare_amount'] = booking_obj.fare_amount
     bkn['id'] =  booking_obj.id
     bkn['total_amount'] = booking_obj.total_amount
@@ -169,11 +174,18 @@ def qr_code(request):
         my_file = File(fi, name=os.path.basename(fi.name))
         booking_obj.qr_code = my_file
         booking_obj.save()
-    context = {
-        'svg': booking_obj
-    }
+        del request.session['phone']
+        del request.session['booking_id']
+        del  request.session['checkout_id']
+        del request.session['merchant_id']
+        del request.session['phone_no']
+        
+        context = {
+            'svg': booking_obj
+        }
 
-    return render(request, "sucess_booking.html", context=context)
+
+    return render(request, "qrcode.html", context=context)
 
    
     
