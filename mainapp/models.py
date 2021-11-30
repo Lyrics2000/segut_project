@@ -88,6 +88,8 @@ class Payment(BaseModel):
         return str(self.user_id)
 
 
+
+
 class SLiderPanel(BaseModel):
     header = models.CharField(max_length=255)
     header2 =  models.CharField(max_length=255)

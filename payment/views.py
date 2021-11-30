@@ -24,6 +24,11 @@ import json
 # Create your views here.
 
 import json
+from django.http import FileResponse
+import io
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
 
 from datetime import datetime
 #mpesa callback
@@ -174,11 +179,12 @@ def qr_code(request):
         my_file = File(fi, name=os.path.basename(fi.name))
         booking_obj.qr_code = my_file
         booking_obj.save()
-        del request.session['phone']
-        del request.session['booking_id']
-        del  request.session['checkout_id']
-        del request.session['merchant_id']
-        del request.session['phone_no']
+     
+        # del request.session['phone']
+        # del request.session['booking_id']
+        # del  request.session['checkout_id']
+        # del request.session['merchant_id']
+        # del request.session['phone_no']
         
         context = {
             'svg': booking_obj
@@ -186,6 +192,62 @@ def qr_code(request):
 
 
     return render(request, "qrcode.html", context=context)
+
+@login_required(login_url="account:sign_in")
+def generate_pdf(request):
+    booking =  request.session.get('booking_id')
+    booking_obj =  Booking.objects.get(id = booking)
+    bkn = {}
+    bkn1 ={}
+    bkn2 = {}
+    bkn3 = {}
+    bkn4 ={}
+    bkn5 ={}
+    bkn6 ={}
+    bkn7 ={}
+    bkn['first_name'] =  request.user.first_name
+    bkn1['last_name'] =  request.user.last_name
+    bkn2['phone'] =  request.user.phone
+    bkn3['fare_amount'] = booking_obj.fare_amount
+    bkn4['id'] =  booking_obj.id
+    bkn5['total_amount'] = booking_obj.total_amount
+    bkn6['number_of_seats'] = booking_obj.number_of_seats
+    bkn7['booking_status'] = booking_obj.booking_status
+
+    # generae byte stream
+    buf  =  io.BytesIO()
+    # create canvas
+    c =  canvas.Canvas(buf,pagesize=letter,bottomup=1)
+    # creat a text object
+    textob =  c.beginText()
+ 
+    textob.setTextOrigin(inch,inch)
+    textob.setFont("Helvetica",14)
+
+    # add text
+    textob.textLine(str(bkn))
+    textob.textLine(str(bkn1))
+    textob.textLine(str(bkn2))
+    textob.textLine(str(bkn3))
+    textob.textLine(str(bkn4))
+    textob.textLine(str(bkn5))
+    textob.textLine(str(bkn6))
+    textob.textLine(str(bkn7))
+    with open('output.png', 'rb') as fi:
+       
+        c.drawImage(os.path.basename(fi.name),inch, inch, mask='auto')
+        c.drawText(textob)
+        c.showPage()
+        c.save()
+        buf.seek(0)
+        del request.session['phone']
+        del request.session['booking_id']
+        del  request.session['checkout_id']
+        del request.session['merchant_id']
+        del request.session['phone_no']
+        return FileResponse(buf,as_attachment=True,filename='receipt.pdf')
+        
+
 
    
     

@@ -7,7 +7,8 @@ from .views import (
 
     mpesa_queyr,
     startmpesaRequest,
-    qr_code
+    qr_code,
+    generate_pdf
 )
 
 app_name = "mpesa"
@@ -17,7 +18,8 @@ urlpatterns = [
 
     path('mpesa_query/',mpesa_queyr,name="mpesa_qury"),
     path('startMpesaRequest',startmpesaRequest,name="start_mpesa"),
-    path('qr_code/',qr_code,name="qr_code")
+    path('qr_code/',qr_code,name="qr_code"),
+    path('generate_pdf/',generate_pdf,name="generate_pdf")
 
 ]
 

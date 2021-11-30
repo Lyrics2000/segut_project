@@ -19,9 +19,11 @@
           <img src="{{svg.qr_code.url}}" alt="Italian Trulli">
           <p>
 
-            <a href="{{svg.qr_code.url}}">download here</a>
-    
+            {% comment %} <a href="{{svg.qr_code.url}}">download here</a> {% endcomment %}
+            <a href ="{% url 'mpesa:generate_pdf' %}">Download here </a>
           </p>
+
+         
 
           <p>
 
